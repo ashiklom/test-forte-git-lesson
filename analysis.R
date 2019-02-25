@@ -1,13 +1,12 @@
 library(tidyverse)
 a_bandlist_raw <- read.csv("data/A_bandlist.csv", header = TRUE, stringsAsFactors = FALSE)
 a_bandlist_raw
-glimpse(a_bandlist_raw)
 
-summarize_all(a_bandlist_raw, n_distinct)
+lapply(a_bandlist_raw, function(x) length(unique(x)))
 
-count(a_bandlist_raw, Species)
-count(a_bandlist_raw, Health_status)
-count(a_bandlist_raw, Canopy_status)
+table(a_bandlist_raw[["Species"]])
+table(a_bandlist_raw[["Health_status"]])
+table(a_bandlist_raw[["Canopy_status"]])
 
 a_bandlist <- a_bandlist_raw %>% 
   select(-X1) %>% 
