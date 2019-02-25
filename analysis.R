@@ -35,4 +35,5 @@ ggplot(a_bandlist) +
   geom_boxplot() +
   ylab("DBH (cm)") +
   xlab("Subplot") +
+  scale_fill_brewer(palette = "Set1") +
   theme_minimal()
