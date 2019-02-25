@@ -1,5 +1,5 @@
 library(tidyverse)
-a_bandlist_raw <- read_csv("data/A_bandlist.csv")
+a_bandlist_raw <- read.csv("data/A_bandlist.csv", header = TRUE, stringsAsFactors = FALSE)
 a_bandlist_raw
 glimpse(a_bandlist_raw)
 
