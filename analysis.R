@@ -32,4 +32,7 @@ species_summary
 
 ggplot(a_bandlist) +
   aes(x = SubplotID, y = DBH_cm, fill = Species) +
-  geom_boxplot()
+  geom_boxplot() +
+  ylab("DBH (cm)") +
+  xlab("Subplot") +
+  theme_minimal()
