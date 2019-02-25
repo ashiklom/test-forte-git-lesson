@@ -21,6 +21,15 @@ a_bandlist <- a_bandlist_raw %>%
   )
 a_bandlist
 
+species_summary <- a_bandlist %>% 
+  group_by(Species) %>% 
+  summarize(
+    mean_DBH_cm = mean(DBH_cm),
+    frac_alive = mean(Health_status == "alive"),
+    frac_understory = mean(Canopy_status == "understory")
+  )
+species_summary
+
 ggplot(a_bandlist) +
   aes(x = SubplotID, y = DBH_cm, fill = Species) +
   geom_boxplot()
